@@ -22,6 +22,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+  <link rel="apple-touch-icon" href="logo.jpeg">
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -43,11 +47,13 @@
   <header class="site-header" role="banner">
     <div class="nav-container">
       <nav class="nav-pill" aria-label="Navigation principale">
-        <a href="#hero" class="brand-logo" aria-label="Paul GUEDE - Retour en haut">
-          <div class="brand-mark">PG</div>
+        <a href="#hero" class="brand-logo" aria-label="LOGOTI — Paul GUEDE - Retour en haut">
+          <div class="brand-logo-badge">
+            <img src="logo.jpeg" alt="Logo officiel LOGOTI" class="brand-logo-img">
+          </div>
           <div class="brand-text">
             PAUL GUEDE
-            <span>ART DIRECTION</span>
+            <span>LOGOTI • ART DIRECTION</span>
           </div>
         </a>
 
@@ -86,8 +92,13 @@
   <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
     <div class="mobile-nav-header">
       <div class="brand-logo">
-        <div class="brand-mark">PG</div>
-        <div class="brand-text">PAUL GUEDE</div>
+        <div class="brand-logo-badge">
+          <img src="logo.jpeg" alt="Logo officiel LOGOTI" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          PAUL GUEDE
+          <span>LOGOTI STUDIO</span>
+        </div>
       </div>
       <button id="mobileDrawerClose" class="btn-theme-toggle" aria-label="Fermer le menu mobile">
         ✕
@@ -137,18 +148,14 @@
         <!-- Monumental Hero Typography -->
         <div class="hero-main">
           <h1 class="hero-title reveal-on-scroll delay-1">
-            <span class="title-line">
-              <span>DIRECTEUR ARTISTIQUE</span>
-            </span>
-            <span class="title-line">
-              <span>& GRAPHISTE <span class="highlight-accent">AUDACIEUX</span>.</span>
-            </span>
+            DIRECTION ARTISTIQUE<br>
+            <span class="highlight-accent">&amp; BRANDING.</span>
           </h1>
 
           <div class="hero-grid">
             <div class="hero-text-col reveal-on-scroll delay-2">
               <p class="hero-desc">
-                Je façonne des <strong>identités de marque percutantes</strong>, des <strong>affiches mémorables</strong> et des <strong>compositions visuelles 3D</strong> qui captent l’attention, racontent une histoire authentique et propulsent la croissance commerciale.
+                Création d'identités visuelles stratégiques, d'affiches d'impact et d'univers 3D contemporains pour marques audacieuses.
               </p>
 
               <div class="hero-actions">
@@ -204,6 +211,81 @@
           <p class="section-subtitle">
             Une sélection rigoureuse de réalisations concrètes : de l'identité visuelle d'entreprises aux affiches événementielles d'envergure et explorations 3D.
           </p>
+        </div>
+
+        <!-- Featured Masterpiece Spotlight: The Sandwich Broker -->
+        <div class="featured-spotlight-card reveal-on-scroll delay-1" id="featuredBrokerSpotlight">
+          <div class="spotlight-visual-side">
+            <div class="spotlight-media-frame" role="button" tabindex="0" id="spotlightBrokerBtn" aria-label="Ouvrir l'étude de cas The Sandwich Broker">
+              <img src="broker.jpeg" alt="The Sandwich Broker — Identité de marque et Packaging complet" class="spotlight-img" loading="eager">
+              <div class="spotlight-overlay-glow"></div>
+              <div class="spotlight-badge-floating">
+                <span class="spotlight-star">★</span> PROJET EN VEDETTE
+              </div>
+              <div class="spotlight-click-hint">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span>Cliquer pour explorer l'étude de cas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-content-side">
+            <div class="spotlight-meta-header">
+              <span class="spotlight-tag">BRANDING GLOBAL & PACKAGING 360°</span>
+              <span class="spotlight-year">2026 • LOMÉ</span>
+            </div>
+
+            <h3 class="spotlight-title">The Sandwich Broker — Identité, Packaging & Papeterie</h3>
+            
+            <p class="spotlight-desc">
+              Déploiement complet d’une identité gourmande et fraîche : logotype emblématique associant toque de chef et typographie fluide, papier d'emballage sandwich à motif continu, packaging boîte de livraison rigide et cartes de visite professionnelles.
+            </p>
+
+            <div class="spotlight-highlights-grid">
+              <div class="spotlight-feat-item">
+                <span class="spotlight-feat-icon">✦</span>
+                <div class="spotlight-feat-text">
+                  <strong>Logotype & Emblème</strong>
+                  <p>Toque mandarine & lettrage basilic "Hasty and Tasty"</p>
+                </div>
+              </div>
+              <div class="spotlight-feat-item">
+                <span class="spotlight-feat-icon">✦</span>
+                <div class="spotlight-feat-text">
+                  <strong>Packaging Alimentaire</strong>
+                  <p>Papiers kraft sulfurisés imprimés & boîte rigide</p>
+                </div>
+              </div>
+              <div class="spotlight-feat-item">
+                <span class="spotlight-feat-icon">✦</span>
+                <div class="spotlight-feat-text">
+                  <strong>Papeterie Commerciale</strong>
+                  <p>Cartes de visite de prestige (Ethna Kougbagan)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="spotlight-actions">
+              <button class="btn-primary" id="openBrokerModalBtn">
+                <span>Explorer l'étude de cas complète</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <div class="spotlight-palette-mini" title="Palette chromatique The Sandwich Broker">
+                <span class="swatch-dot" style="background: #2D6A4F;" title="Vert Basilic #2D6A4F"></span>
+                <span class="swatch-dot" style="background: #FB8500;" title="Orange Mandarine #FB8500"></span>
+                <span class="swatch-dot" style="background: #52B788;" title="Vert Fraîcheur #52B788"></span>
+                <span class="swatch-dot" style="background: #FFF3E0;" title="Crème Gourmande #FFF3E0"></span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- 3D Spatial Project Gallery (Interactive Real-Time 3D Space) -->
@@ -284,13 +366,15 @@
               <div class="studio-monogram-display">
                 <div class="monogram-orbit monogram-orbit-1"></div>
                 <div class="monogram-orbit monogram-orbit-2"></div>
-                <div class="monogram-core">PG</div>
+                <div class="monogram-core monogram-with-logo" title="Logo officiel LOGOTI">
+                  <img src="logo.jpeg" alt="Logo officiel LOGOTI" class="monogram-logo-img">
+                </div>
               </div>
 
               <div class="studio-card-details">
                 <div class="studio-header-wrap">
                   <h3 class="studio-artist-name">Paul E. K. GUEDE</h3>
-                  <p class="studio-artist-role">Graphiste & Directeur Artistique</p>
+                  <p class="studio-artist-role">Fondateur LOGOTI • Graphiste & DA</p>
                 </div>
                 
                 <div class="studio-pillars-list">
@@ -438,8 +522,11 @@
 
         <!-- Bottom Row -->
         <div class="footer-bottom-row">
-          <div class="footer-copyright">
-            © 2026 Paul E. K. GUEDE. Tous droits réservés. Conçu avec excellence éditoriale.
+          <div class="footer-brand-wrap">
+            <img src="logo.jpeg" alt="Logo officiel LOGOTI" class="footer-logo-thumb">
+            <div class="footer-copyright">
+              © 2026 LOGOTI — Paul E. K. GUEDE. Tous droits réservés. Lomé, Togo.
+            </div>
           </div>
 
           <button id="backToTopBtn" class="back-to-top-btn" aria-label="Remonter en haut de la page">

@@ -11,6 +11,43 @@
      ========================================================================== */
   const PROJECTS = [
     {
+      id: 'sandwich-broker',
+      title: 'The Sandwich Broker — Identité & Packaging 360°',
+      client: 'The Sandwich Broker (Agoè-Zossimé)',
+      category: 'branding',
+      categoryLabel: 'Branding & Packaging 360°',
+      year: '2026',
+      image: './broker.jpeg',
+      featured: true,
+      colSpan: 'card-col-12',
+      shortDesc: 'Écosystème de marque complet pour restaurant artisanal : logotype dynamique, papiers d’emballage sandwich imprimés, packaging boîte rigide et cartes de visite professionnelles.',
+      fullDesc: 'Conception intégrale et déploiement 360° de l’identité visuelle pour l’enseigne The Sandwich Broker à Lomé. Le projet combine un logotype à forte personnalité (toque stylisée orange mandarine et calligraphie vive verte avec sceau de fraîcheur "Hasty and Tasty"), des papiers d’emballage sandwich kraft à motif continu, une boîte de livraison rigide personnalisée et un jeu complet de cartes de visite recto/verso pour la direction commerciale.',
+      palette: ['#2D6A4F', '#FB8500', '#52B788', '#1B4332', '#FFF3E0'],
+      tools: ['Illustrator', 'Photoshop', 'InDesign', 'Packaging 3D Mockup'],
+      deliverables: [
+        'Logotype vectoriel principal & déclinaisons monochromes',
+        'Motif de marque continu pour papier d’emballage alimentaire',
+        'Mockup & gabarit boîte de livraison rigide avec marquage',
+        'Cartes de visite commerciales recto/verso (Ethna Kougbagan)',
+        'Charte colorimétrique & guide d’application packaging'
+      ]
+    },
+    {
+      id: 'logoti-identity',
+      title: 'LOGOTI — Identité Officielle & Logotype Studio',
+      client: 'LOGOTI Studio (Direction Artistique)',
+      category: 'branding',
+      categoryLabel: 'Branding & Identité Officielle',
+      year: '2026',
+      image: './logo.jpeg',
+      colSpan: 'card-col-6',
+      shortDesc: 'Logotype officiel emblématique de l’agence LOGOTI fondé par Paul GUEDE. Typographie audacieuse, contemporaine et percutante.',
+      fullDesc: 'Conception intégrale du logotype officiel LOGOTI. Une composition typographique sur-mesure combinant des lettres épaisses, imbriquées et percutantes aux contours nets sur fond contrasté. Ce symbole incarne l’audace, la rigueur géométrique et l’énergie créative qui signent l’ensemble des réalisations graphiques du studio.',
+      palette: ['#000000', '#FFFFFF', '#D4FF00', '#FF4D00', '#18181B'],
+      tools: ['Illustrator', 'Photoshop', 'Typography Design'],
+      deliverables: ['Logotype vectoriel haute précision (SVG/AI)', 'Déclinaisons monochromes & contrastées', 'Charte graphique studio', 'Signature de marque & avatar officiel']
+    },
+    {
       id: 'abi-coiffure',
       title: 'Abi Coiffure — Campagne Estivale',
       client: 'Abi Coiffure (Lomé)',
@@ -18,7 +55,7 @@
       categoryLabel: 'Direction Artistique & Print',
       year: '2026',
       image: './WhatsApp Image 2026-10-14 at 17.48.56.jpeg',
-      colSpan: 'card-col-7',
+      colSpan: 'card-col-6',
       shortDesc: 'Direction artistique et affichage promotionnel pour salon de coiffure premium & vente de mèches et perruques de luxe.',
       fullDesc: 'Conception intégrale d’une campagne publicitaire séduisante et raffinée. L’identité repose sur un camaïeu de teintes douces (rose poudré, bordeaux velouté) et une typographie sérif haut de gamme, valorisant la qualité artisanale des perruques et la beauté contemporaine des clientes.',
       palette: ['#E8AFB0', '#2B141E', '#F5D6D8', '#522B38', '#FFFFFF'],
@@ -40,21 +77,7 @@
       tools: ['Photoshop', 'Cinema 4D', 'Illustrator'],
       deliverables: ['Affiche de projection monumentale', 'Habillage d’écrans scène', 'Posters commémoratifs', 'Format carré pour réseaux sociaux']
     },
-    {
-      id: 'sandwich-broker',
-      title: 'The Sandwich Broker — Identité & Logotype',
-      client: 'The Sandwich Broker',
-      category: 'branding',
-      categoryLabel: 'Branding & Identité Visuelle',
-      year: '2026',
-      image: './WhatsApp Image 2026-10-14 at 17.52.27.jpeg',
-      colSpan: 'card-col-5',
-      shortDesc: 'Identité de marque gourmande et fraîche pour une enseigne moderne de restauration rapide artisanale.',
-      fullDesc: 'Création d’un logotype combinant énergie, modernité et tradition culinaire. Le symbole associe une toque de cuisinier stylisée en orange mandarine à un lettrage fluide fait main en vert basilic, complété par le label de fraîcheur "Hasty and Tasty".',
-      palette: ['#2D6A4F', '#FB8500', '#52B788', '#1B4332', '#FFF3E0'],
-      tools: ['Illustrator', 'InDesign', 'Photoshop'],
-      deliverables: ['Logotype vectoriel (SVG/AI)', 'Charte graphique (Brand Book)', 'Packaging kraft & papiers sulfurisés', 'Stickers & enseigne extérieure']
-    },
+
     {
       id: 'gloria-live-studio',
       title: 'Gloria Live Studio 2026 — Artwork Musical',
@@ -298,9 +321,10 @@
     // Responsive radius calculation
     function getRadius() {
       const isMobile = window.innerWidth <= 768;
-      const cardWidth = isMobile ? 250 : 340;
+      const isSmallMobile = window.innerWidth <= 480;
+      const cardWidth = isSmallMobile ? 220 : (isMobile ? 250 : 340);
       // Tangent radius: R = (cardWidth / 2) / tan(pi / N) + padding
-      return Math.round((cardWidth / 2) / Math.tan(Math.PI / totalProjects)) + 40;
+      return Math.round((cardWidth / 2) / Math.tan(Math.PI / totalProjects)) + (isSmallMobile ? 25 : 40);
     }
 
     let radius = getRadius();
@@ -310,16 +334,21 @@
     const cardElements = [];
 
     PROJECTS.forEach((project, idx) => {
+      const isFeatured = !!project.featured;
       const card = document.createElement('div');
-      card.className = 'spatial-card';
+      card.className = `spatial-card ${isFeatured ? 'is-featured-card' : ''}`;
       card.setAttribute('data-id', project.id);
       card.setAttribute('data-index', idx);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `Explorer ${project.title}`);
 
+      const badgeHtml = isFeatured
+        ? `<span class="spatial-card-badge spatial-card-badge-featured">★ EN VEDETTE</span>`
+        : `<span class="spatial-card-badge">${escapeHTML(project.categoryLabel)}</span>`;
+
       card.innerHTML = `
-        <span class="spatial-card-badge">${escapeHTML(project.categoryLabel)}</span>
+        ${badgeHtml}
         <div class="spatial-card-media">
           <img src="${project.image}" alt="${escapeHTML(project.title)}" loading="lazy">
         </div>
@@ -829,6 +858,29 @@
       if (e.key === 'ArrowLeft') { playHapticClick(750); showPrevProject(); }
       if (e.key === 'ArrowRight') { playHapticClick(750); showNextProject(); }
     });
+
+    // 6b. Featured Spotlight Broker listeners
+    const spotlightBrokerBtn = document.getElementById('spotlightBrokerBtn');
+    const openBrokerModalBtn = document.getElementById('openBrokerModalBtn');
+    if (spotlightBrokerBtn) {
+      spotlightBrokerBtn.addEventListener('click', () => {
+        playHapticClick(1100);
+        openProjectModal('sandwich-broker');
+      });
+      spotlightBrokerBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          playHapticClick(1100);
+          openProjectModal('sandwich-broker');
+        }
+      });
+    }
+    if (openBrokerModalBtn) {
+      openBrokerModalBtn.addEventListener('click', () => {
+        playHapticClick(1100);
+        openProjectModal('sandwich-broker');
+      });
+    }
 
     // 7. Email copy pill
     const emailBox = document.getElementById('emailCopyBox');
